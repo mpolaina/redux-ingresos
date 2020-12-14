@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ingresos-app-d0ef2": {
+      "hosting": {
+        "ingresos": [
+          "ingresos-app-d0ef2"
+        ]
+      }
+    }
+  }
+}
