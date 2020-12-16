@@ -1,7 +1,8 @@
 
 
 export class Usuario {
-    // método estático para obtener una nueva instancia de usuario
+
+  // método estático para obtener una nueva instancia de usuario
     static fromFirebase( { uid, nombre, email } ) {
       return new Usuario( uid, nombre, email )
     }

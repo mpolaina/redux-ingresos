@@ -10,8 +10,10 @@ export class AppComponent {
 
   constructor( private authService: AuthService ){
 
+      // Ver el estado de autenticación
       this.authService.initAuthListener()
   }
+
 
 
 

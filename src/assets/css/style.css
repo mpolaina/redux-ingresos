@@ -8310,7 +8310,7 @@ pre {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
   .form-control::placeholder {
-    color: #c9c8c8;
+    color: #c9c8c8 !important;
     opacity: 1; }
   .form-control:disabled, .form-control[readonly] {
     background-color: #e9ecef;
@@ -8617,7 +8617,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   align-items: center; }
   .form-inline .form-check {
     width: 100%; }
- 
+
 .btn {
   display: inline-block;
   font-weight: 400;
@@ -9074,7 +9074,7 @@ input[type="button"].btn-block {
   height: 0;
   overflow: hidden;
   transition: height 0.35s ease; }
-  
+
 
 
 .dropup,
@@ -10942,7 +10942,7 @@ button.close {
   transition: transform 0.6s ease;
   backface-visibility: hidden;
   perspective: 1000px; }
-  
+
 .carousel-item.active,
 .carousel-item-next,
 .carousel-item-prev {
@@ -12957,10 +12957,10 @@ address p {
 
 .card-title {
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   color: #404852;
   margin-bottom: 22px;
-  font-size: 14px;
+  font-size: 20px;
   text-transform: capitalize; }
   .rtl .card-title {
     text-align: right; }
@@ -13046,7 +13046,7 @@ html {
   flex-grow: 1; }
 
 .container-scroller {
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .scroll-container {
@@ -14519,7 +14519,9 @@ select.form-control {
 .form-group label {
   font-size: 13px;
   line-height: 1;
-  vertical-align: top; }
+  vertical-align: top;
+  font-weight: 700;
+}
 
 .form-group.has-danger .form-control {
   border-color: #e65251; }

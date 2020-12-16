@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
 import { AuthService } from '../../services/auth.service';
 
 import { Subscription } from 'rxjs';
+import { setUser } from '../auth.actions';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   loginForm: FormGroup
   cargando: boolean = false
-  uiSubscription: Subscription
+  loadingSubs: Subscription
 
   constructor(
     private fb: FormBuilder,
@@ -36,12 +37,12 @@ export class LoginComponent implements OnInit, OnDestroy {
         password: ['123456', Validators.required]
     })
 
-    this.uiSubscription = this.store.select('ui')
+    this.loadingSubs = this.store.select('ui')
                             .subscribe( ui => this.cargando = ui.isLoading )
   }
 
   ngOnDestroy(): void {
-    this.uiSubscription.unsubscribe()
+    this.loadingSubs.unsubscribe()
   }
 
   login(){
@@ -54,7 +55,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     // firebase login
     this.authService.loginUsuario( email, password )
         .then( credenciales => {
-            console.log(credenciales)
+            console.log(credenciales.user.uid)
             // al realizarse el login, isLoading = cargando para a false
             this.store.dispatch( ui.stopLoading() )
             this.router.navigate(['/'])
