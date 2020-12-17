@@ -48,15 +48,17 @@ export class LoginComponent implements OnInit, OnDestroy {
   login(){
 
     if ( this.loginForm.invalid ) { return }
+
     // al hacer click isLoading = cargando para a true
     this.store.dispatch( ui.isLoading() )
 
     const { email, password } = this.loginForm.value
+
     // firebase login
     this.authService.loginUsuario( email, password )
         .then( credenciales => {
-            console.log(credenciales.user.uid)
-            // al realizarse el login, isLoading = cargando para a false
+
+            // STOP LOADING
             this.store.dispatch( ui.stopLoading() )
             this.router.navigate(['/'])
         })

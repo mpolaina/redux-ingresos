@@ -41,7 +41,8 @@ export class AuthService {
                   // nueva instancia de usuario desde fb
                   const usuario = Usuario.fromFirebase( fireUser )
                   this._usuarioAuth = usuario
-                  // establecemos usuario
+
+                  // [Auth] setUser
                   this.store.dispatch( auth.setUser( {user: usuario} ) )
                 })
           } else {

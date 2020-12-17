@@ -10,6 +10,7 @@ import { registerLocaleData } from "@angular/common";
 import localeEs from "@angular/common/locales/eu";
 import { IngresosService } from '../../services/ingresos.service';
 import Swal from 'sweetalert2';
+import { AppStateWithIngrso } from '../ingreso-gasto.reducer';
 registerLocaleData(localeEs, "es");
 
 @Component({
@@ -24,7 +25,7 @@ export class DetalleComponent implements OnInit, OnDestroy {
   ingresoSubs: Subscription
 
   constructor(
-      private store: Store<AppState>,
+      private store: Store<AppStateWithIngrso>,
       private ingresoService: IngresosService
   ) { }
 

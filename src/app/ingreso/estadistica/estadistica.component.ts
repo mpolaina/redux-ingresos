@@ -4,6 +4,7 @@ import { AppState } from 'src/app/app.reducer';
 import { IngresoGasto } from '../../models/ingresos.model';
 
 import { MultiDataSet, Label } from 'ng2-charts';
+import { AppStateWithIngrso } from '../ingreso-gasto.reducer';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class EstadisticaComponent implements OnInit {
     public doughnutChartLabels: Label[] = ['Ingresos', 'Gastos'];
     public doughnutChartData: MultiDataSet = [[]];
 
-  constructor( private store: Store<AppState> ) { }
+  constructor( private store: Store<AppStateWithIngrso> ) { }
 
   ngOnInit(): void {
 

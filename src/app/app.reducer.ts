@@ -7,7 +7,7 @@ import * as ing from './ingreso/ingreso-gasto.reducer';
 export interface AppState {
    ui: ui.State // carga el isloading: boolean
    user: auth.State,
-   ingresosGastos: ing.State
+   // ingresosGastos: ing.State
 }
 
 
@@ -15,6 +15,6 @@ export const appReducers: ActionReducerMap<AppState> = {
   // state: action
    ui: ui.uiReducer,
    user: auth.authReducer,
-   ingresosGastos: ing.ingresoGastoReducer
+   // ingresosGastos: ing.ingresoGastoReducer
 
 }
